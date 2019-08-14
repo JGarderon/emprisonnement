@@ -37,3 +37,18 @@ Ce programme produira une prison dédiée à un environnement contrôlé. En deh
 - par Julien Garderon, août 2019 
 - GNU GPL 3+ (monde) ou CeCILL 2+ (France) 
 
+# [4] Exemples 
+
+(créer la prison) 
+
+./emprisonner -a creer -d ./prison 
+
+(supprimer la prison) 
+
+./emprisonner -a supprimer -d ./prison 
+
+(rentrer dans la prison) 
+
+./emprisonner -a rentrer -d ./prison 
+
+
