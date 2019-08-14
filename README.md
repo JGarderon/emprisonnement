@@ -36,6 +36,7 @@ Ce programme produira une prison dédiée à un environnement contrôlé. En deh
 - version 0.0.1 (fonctionnel) 
 - par Julien Garderon, août 2019 
 - GNU GPL 3+ (monde) ou CeCILL 2+ (France) 
+- testé sur Ubuntu 19.04 
 
 # [4] Exemples 
 
