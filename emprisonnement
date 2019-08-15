@@ -6,7 +6,7 @@ ENTETE="
         |--------------------------------|
         |   nothus - août 2019 (0.0.1)   |
         ---------------------------------- 
-"
+" 
 
 nettoyer () { 
     if  [ "$VERBEUX" == true ] 
@@ -100,9 +100,13 @@ chroot_supprimer () {
 } 
 
 actionner_aider () { 
-    VERBEUX=true 
+    if [ "$VERBEUX" == false ] 
+        then 
+            VERBEUX=true 
+            afficher_titre "$ENTETE" 
+    fi 
     afficher_ligne 
-    afficher_titre "> Afficher l'aide'" 
+    afficher_titre "> Afficher l'aide" 
     echo -e " 
 
     [0] \033[45mInformation importante\033[0m 
@@ -140,7 +144,11 @@ actionner_aider () {
 } 
 
 actionner_crediter () { 
-    VERBEUX=true 
+    if [ "$VERBEUX" == false ] 
+        then 
+            VERBEUX=true 
+            afficher_titre "$ENTETE" 
+    fi 
     afficher_ligne 
     afficher_titre "> Afficher les crédits" 
     echo -e " 
@@ -370,9 +378,9 @@ afficher_info "VERBEUX = $VERBEUX"
 
 sortie=0
 case $ACTION in
-    supprimer) 
-        actionner_suppression 
-        sortie=$?
+    aider) 
+        actionner_aider 
+        sortie=0
     ;; 
     creer) 
         actionner_creer 
@@ -382,9 +390,9 @@ case $ACTION in
         actionner_rentrer 
         sortie=$?
         ;; 
-    aider) 
-        actionner_aider 
-        sortie=0
+    supprimer) 
+        actionner_suppression 
+        sortie=$?
     ;; 
     credit) 
         actionner_crediter 
